@@ -1,0 +1,15 @@
+package controller;
+
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("api/v1/messages")
+public class MessageController {
+
+	private KafkaTemplate<String, String >kafkaTemplate;
+	
+	public void publish(@RequestBody MessageRequest messageRequest) {
+		kafkaTemplate.send("hanilTrivedi" , request.mess)
+	}
+}
